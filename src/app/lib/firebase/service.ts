@@ -16,3 +16,18 @@ export async function getData(collectionName: string) {
     return [];
   }
 }
+
+export async function getDataByField(collectionName: string, fieldName: string, value: string) {
+  try {
+    const querySnapshot = await getDocs(collection(firestore, collectionName));
+    const data = querySnapshot.docs
+      .filter((doc) => doc.data()[fieldName] === value)
+      .map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+    return data;
+  } catch (error) {
+    return [];
+  }
+}

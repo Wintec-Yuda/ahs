@@ -8,9 +8,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "../ui/input";
 import { Loader2 } from "lucide-react";
 import { signIn } from "next-auth/react";
-import { Input } from "../ui/input";
 import { errorAlert, successAlert } from "@/utils/sweetalert";
 
 const formSchema = z.object({
@@ -41,7 +41,7 @@ const LoginView = () => {
 
       if (res?.ok) {
         successAlert("Login success");
-        router.push("/dashboard");
+        router.push("/information");
       } else {
         errorAlert("Failed to login");
       }

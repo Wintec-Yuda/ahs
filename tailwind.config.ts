@@ -72,6 +72,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "city": "url('/images/water.jpg')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

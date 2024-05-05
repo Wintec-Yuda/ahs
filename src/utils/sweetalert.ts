@@ -1,9 +1,9 @@
 import Swal from "sweetalert2";
 export const showAlert = async (icon: "success" | "error", title: string, text: string) => {
   await Swal.fire({
-    icon: icon,
-    title: title,
-    text: text,
+    icon,
+    title,
+    text,
     timer: 2000,
   });
 };

@@ -4,7 +4,7 @@ import WaterTankInformation from "../fragments/information/WaterTank";
 
 const DashboardView = () => {
   return (
-    <div className="lg:h-[100vh] p-4 flex flex-col gap-5">
+    <div className="lg:h-screen p-4 flex flex-col gap-5">
       <WaterTankInformation />
       <SpendingInformation />
       <RevenueInformation />

@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
 import jwt from "jsonwebtoken";
-import { getDataByField } from "@/app/lib/firebase/service";
+import { getDataByField } from "@/lib/firebase/service";
 
 const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
@@ -18,7 +18,7 @@ const handler = NextAuth({
         username: {},
         password: {},
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         //
         const response = await getDataByField("users", "username", credentials?.username || "");
         const user: any = response[0];

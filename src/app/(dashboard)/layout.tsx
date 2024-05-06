@@ -1,6 +1,6 @@
 "use client";
 
-import { confirmAlert } from "@/utils/sweetalert";
+import { confirmAlert} from "@/utils/sweetalert";
 import { SessionProvider, signOut } from "next-auth/react";
 import { TbLogout } from "react-icons/tb";
 import { Button } from "@/components/ui/button";
@@ -16,8 +16,8 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <section className="flex flex-col">
-      <aside className="fixed w-12 sm:w-48 h-screen bg-white bg-opacity-5 backdrop-blur-sm flex flex-col items-center justify-center sm:justify-normal py-4 px-2">
-        <div className="flex flex-col justify-between w-full h-screen mt-32">
+      <aside className="fixed w-12 sm:w-48 h-screen bg-white bg-opacity-5 backdrop-blur-sm flex flex-col items-center justify-center sm:justify-normal py-4 px-2 pt-20">
+        <div className="flex flex-col justify-between w-full h-screen">
           <Navbar />
           <Button variant="destructive" onClick={handleSignOut} className="p-1">
             <TbLogout className="text-black text-xl cursor-pointer" />

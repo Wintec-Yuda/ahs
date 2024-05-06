@@ -12,7 +12,7 @@ const InformationPage = () => {
 
   const { data, error, isLoading } = useSWR("/api/waterTank", fetcher);
 
-  if (!isLoading) dispatch(setWaterTank(data?.data[0]));
+  if (!isLoading) dispatch(setWaterTank(data?.data));
   return isLoading ? (
     <div className="flex justify-center items-center h-screen">
       <Loader className="text-white" />

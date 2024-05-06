@@ -26,7 +26,7 @@ const GallonView = () => {
   const [loading, setLoading] = useState(false);
   const session: any = useSession();
 
-  const id = useSelector((state: any) => state.waterTank).data[0]?.id;
+  const id = useSelector((state: any) => state.waterTank).data?.id;
   const token = session?.data?.token;
 
   const fillForm = useForm({

@@ -13,7 +13,7 @@ export const formatIDR = (value: number) => {
   return isNegative ? "- Rp " + hasil : "Rp " + hasil;
 };
 
-export const formatDate = (date: string) => {
+export const formatDate = (date: string = "01-01-2024") => {
   const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
   const parts = date.split("-");
@@ -28,4 +28,3 @@ export const formatDate = (date: string) => {
 
   return `${day} ${month} ${year}`;
 };
-

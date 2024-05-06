@@ -34,7 +34,7 @@ export async function PUT(request: NextRequest) {
       if (data.spending) {
         await updateDataSpendingById("waterTank", data);
       } else {
-        const revenue = parseInt(data.gallonSell) * 4000;
+        const revenue = parseInt(data.gallonSell) * 3000;
         
         await updateDataById("waterTank", data, revenue);
       }

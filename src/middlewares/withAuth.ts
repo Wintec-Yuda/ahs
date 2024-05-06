@@ -21,7 +21,7 @@ export default function withAuth(middleware: NextMiddleware, requireAuth: string
 
       if (token) {
         if (authPage.includes(pathname)) {
-          return NextResponse.redirect(new URL("/dashboard", req.url));
+          return NextResponse.redirect(new URL("/information", req.url));
         }
       }
     }

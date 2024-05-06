@@ -11,14 +11,14 @@ const formSchema = z.object({
   qty: z.string(),
 });
 
-const EntryView = () => {
-  const fillForm = useForm<z.infer<typeof formSchema>>({
+const GallonView = () => {
+  const fillForm = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       qty: "",
     },
   });
-  const sellForm = useForm<z.infer<typeof formSchema>>({
+  const sellForm = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       qty: "",
@@ -27,23 +27,28 @@ const EntryView = () => {
 
   const handleFill = async (data: z.infer<typeof formSchema>) => {
     console.log(data);
+    fillForm.reset();
   };
 
   const handleSell = async (data: z.infer<typeof formSchema>) => {
     console.log(data);
+    sellForm.reset();
   };
 
   return (
     <div className="h-screen p-4">
-      <div className="flex flex-col gap-10">
-        <FormInput form={fillForm} handleSubmit={handleFill} colorButton="bg-blue-500 hover:bg-blue-700" textButton="Isi Galon" />
-        <FormInput form={sellForm} handleSubmit={handleSell} colorButton="bg-green-500 hover:bg-green-700" textButton="Jual Galon" />
+      <h1 className="text-2xl text-white font-bold underline">Input Data Gallon</h1>
+      <div className="flex flex-col gap-5">
+        <FormInput form={fillForm} handleSubmit={handleFill} colorButton="bg-blue-500 hover:bg-blue-700" label="Isi Galon" />
+        <FormInput form={sellForm} handleSubmit={handleSell} colorButton="bg-green-500 hover:bg-green-700" label="Jual Galon" />
       </div>
     </div>
   );
 };
 
-const FormInput = ({ form, handleSubmit, colorButton, textButton }: any) => {
+export default GallonView;
+
+const FormInput = ({ form, handleSubmit, colorButton, label }: any) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)} className="flex gap-4 items-center">
@@ -53,7 +58,7 @@ const FormInput = ({ form, handleSubmit, colorButton, textButton }: any) => {
           render={({ field }) => {
             return (
               <FormItem className="flex gap-4 items-center">
-                <FormLabel className="text-white text-xl font-bold mt-2">Jumlah</FormLabel>
+                <FormLabel className="text-white text-lg font-bold mt-2">{label}</FormLabel>
                 <FormControl>
                   <Input type="number" {...field} />
                 </FormControl>
@@ -62,11 +67,10 @@ const FormInput = ({ form, handleSubmit, colorButton, textButton }: any) => {
           }}
         />
         <Button className={`${colorButton} text-lg font-bold mt-2`} type="submit">
-          {textButton}
+          Kirim
         </Button>
       </form>
+      <hr />
     </Form>
   );
 };
-
-export default EntryView;

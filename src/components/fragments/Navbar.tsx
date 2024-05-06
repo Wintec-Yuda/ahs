@@ -9,8 +9,8 @@ import { Button } from "../ui/button";
 
 const navItems = [
   { title: "Information", href: "/information", icon: <BsFillInfoCircleFill className="text-black text-xl" /> },
-  { title: "Entry data", href: "/entry", icon: <FaHouseFloodWater className="text-black text-xl" /> },
-  { title: "Finance", href: "/finance", icon: <MdOutlineAttachMoney className="text-black text-xl" /> },
+  { title: "Input gallon", href: "/gallon", icon: <FaHouseFloodWater className="text-black text-xl" /> },
+  { title: "Spending", href: "/spending", icon: <MdOutlineAttachMoney className="text-black text-xl" /> },
 ];
 
 const Navbar = () => {

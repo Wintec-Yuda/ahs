@@ -1,25 +1,25 @@
 "use client";
 
-import InformationView from "@/components/views/Information";
+import SpendingView from "@/components/views/Spending";
 import { setWaterTank } from "@/store/slices/waterTank";
 import { fetcher } from "@/utils/fetcher";
 import { Loader } from "lucide-react";
 import { useDispatch } from "react-redux";
 import useSWR from "swr";
 
-const InformationPage = () => {
+const Spendingpage = () => {
   const dispatch = useDispatch();
 
   const { data, error, isLoading } = useSWR("/api/waterTank", fetcher);
 
   if (!isLoading) dispatch(setWaterTank(data?.data));
   return isLoading ? (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center">
       <Loader className="text-white" />
     </div>
   ) : (
-    <InformationView />
+    <SpendingView />
   );
 };
 
-export default InformationPage;
+export default Spendingpage;

@@ -14,7 +14,7 @@ const Gallonpage = () => {
 
   if (!isLoading) dispatch(setWaterTank(data?.data));
   return isLoading ? (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center">
       <Loader className="text-white" />
     </div>
   ) : (

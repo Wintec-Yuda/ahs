@@ -2,12 +2,13 @@
 
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaHouseFloodWater } from "react-icons/fa6";
-import { MdOutlineAttachMoney } from "react-icons/md";
+import { MdOutlineAttachMoney, MdSpaceDashboard } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
 const navItems = [
+  { title: "Dashboard", href: "/dashboard", icon: <MdSpaceDashboard className="text-black text-xl" /> },
   { title: "Information", href: "/information", icon: <BsFillInfoCircleFill className="text-black text-xl" /> },
   { title: "Input gallon", href: "/gallon", icon: <FaHouseFloodWater className="text-black text-xl" /> },
   { title: "Spending", href: "/spending", icon: <MdOutlineAttachMoney className="text-black text-xl" /> },

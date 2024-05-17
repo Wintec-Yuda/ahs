@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </aside>
       <main className="overflow-hidden bg-city">
-        <div className="w-[calc(100vw-3rem)] sm:w-[calc(100vw-12rem)] relative left-12 sm:left-48 bg-slate-900">
+        <div className="w-[calc(100vw-3rem)] sm:w-[calc(100vw-12rem)] relative left-12 sm:left-48 bg-slate-900 min-h-screen">
           <SessionProvider>
             <Provider store={store}>{children}</Provider>
           </SessionProvider>

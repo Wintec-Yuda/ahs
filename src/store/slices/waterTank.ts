@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const athleteSlice = createSlice({
+const waterTankSlice = createSlice({
   name: "waterTank",
   initialState: {
     data: {},
@@ -12,5 +12,5 @@ const athleteSlice = createSlice({
   },
 });
 
-export const { setWaterTank } = athleteSlice.actions;
-export default athleteSlice.reducer;
+export const { setWaterTank } = waterTankSlice.actions;
+export default waterTankSlice.reducer;
